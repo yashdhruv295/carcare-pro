@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CarCare Pro — Dashboard</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<link rel="stylesheet" href="dash.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav>
+  <div class="logo">Car<span>Care</span> Pro</div>
+  <ul>
+    <li><a href="#service">Service</a></li>
+    <li><a href="#testdrive">Test Drive</a></li>
+    <li><a href="#emergency">Emergency</a></li>
+    <li><a href="#status">Status</a></li>
+    <li><a href="#feedback">Feedback</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div id="welcome-badge"></div>
+</nav>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-content">
+    <div class="hero-badge"><i class="ti ti-star"></i> Trusted by 5000+ Customers</div>
+    <h1>Car<span>Care</span> Pro</h1>
+    <p>Complete Vehicle Maintenance, Test Drive Booking,<br>Emergency Assistance & Professional Car Care Solutions</p>
+    <div class="hero-btns">
+      <button class="btn-primary" onclick="location.href='#service'"><i class="ti ti-calendar"></i> Book Service Now</button>
+      <button class="btn-ghost" onclick="location.href='#emergency'"><i class="ti ti-urgent"></i> Emergency Help</button>
+    </div>
+    <div id="welcome-hero"></div>
+  </div>
+</div>
+
+<!-- Stats -->
+<section>
+  <h2 class="section-title">Our <span>Achievements</span></h2>
+  <div class="stats-grid">
+    <div class="stat-card"><div class="stat-icon"><i class="ti ti-users"></i></div><div class="stat-num">5000+</div><div class="stat-label">Happy Customers</div></div>
+    <div class="stat-card"><div class="stat-icon"><i class="ti ti-tool"></i></div><div class="stat-num">150+</div><div class="stat-label">Expert Technicians</div></div>
+    <div class="stat-card"><div class="stat-icon"><i class="ti ti-building-store"></i></div><div class="stat-num">50+</div><div class="stat-label">Service Centers</div></div>
+    <div class="stat-card"><div class="stat-icon"><i class="ti ti-headset"></i></div><div class="stat-num">24/7</div><div class="stat-label">Support Available</div></div>
+  </div>
+</section>
+
+<!-- Why Choose -->
+<section>
+  <h2 class="section-title">Why Choose <span>Us?</span></h2>
+  <div class="features-grid">
+    <div class="feature-card"><i class="ti ti-certificate"></i> Certified Technicians</div>
+    <div class="feature-card"><i class="ti ti-settings"></i> Genuine Spare Parts</div>
+    <div class="feature-card"><i class="ti ti-coin"></i> Affordable Pricing</div>
+    <div class="feature-card"><i class="ti ti-bolt"></i> Quick Service</div>
+    <div class="feature-card"><i class="ti ti-truck"></i> Pickup & Drop</div>
+    <div class="feature-card"><i class="ti ti-phone-call"></i> 24/7 Emergency Support</div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section>
+  <h2 class="section-title">Customer <span>Reviews</span></h2>
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="review-stars">⭐⭐⭐⭐⭐</div>
+      <div class="review-text">"Excellent service! My car was serviced quickly and professionally. Highly recommend CarCare Pro."</div>
+      <div class="review-author">— Rahul Sharma</div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">⭐⭐⭐⭐⭐</div>
+      <div class="review-text">"Very professional staff and transparent pricing. Best car service experience I've ever had."</div>
+      <div class="review-author">— Priya Patel</div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">⭐⭐⭐⭐⭐</div>
+      <div class="review-text">"Fast emergency help when I needed it most. The team arrived in 20 minutes. Amazing!"</div>
+      <div class="review-author">— Amit Verma</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <h2 class="section-title">Frequently Asked <span>Questions</span></h2>
+  <div class="faq-wrap">
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">How long does a service take? <i class="ti ti-plus"></i></div>
+      <div class="faq-a">Normally 2–4 hours depending on the type of service. Complex repairs may take longer.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">Do you provide pickup & drop? <i class="ti ti-plus"></i></div>
+      <div class="faq-a">Yes, free pickup and drop facility is available within city limits for all bookings.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">Is roadside assistance available? <i class="ti ti-plus"></i></div>
+      <div class="faq-a">Yes, 24/7 emergency roadside assistance is available. Charges are ₹25 per km.</div>
+    </div>
+    <div class="faq-item" onclick="toggleFaq(this)">
+      <div class="faq-q">Do you use genuine spare parts? <i class="ti ti-plus"></i></div>
+      <div class="faq-a">Absolutely. We only use OEM certified genuine spare parts for all repairs and replacements.</div>
+    </div>
+  </div>
+</section>
+
+<!-- Service Booking -->
+<section id="service">
+  <h2 class="section-title">Car Service <span>Booking</span></h2>
+  <div class="form-card">
+    <div class="input-row">
+      <div class="field-group"><label>Vehicle Number</label><input type="text" id="vehicleNo" placeholder="MH-31 AB 1234"></div>
+      <div class="field-group"><label>Owner Name</label><input type="text" id="ownerName" placeholder="Full name"></div>
+    </div>
+    <div class="field-group"><label>Phone Number</label><input type="tel" id="phoneNo" placeholder="+91 00000 00000"></div>
+
+    <div class="form-section-title"><i class="ti ti-tool"></i> Regular Maintenance</div>
+    <div class="services-grid">
+      <label class="service-check"><input type="checkbox" name="service" value="Oil Change"> Oil Change</label>
+      <label class="service-check"><input type="checkbox" name="service" value="Engine Oil Replacement"> Engine Oil</label>
+      <label class="service-check"><input type="checkbox" name="service" value="Oil Filter Change"> Oil Filter</label>
+      <label class="service-check"><input type="checkbox" name="service" value="Air Filter Cleaning"> Air Filter</label>
+      <label class="service-check"><input type="checkbox" name="service" value="Wheel Alignment"> Wheel Alignment</label>
+      <label class="service-check"><input type="checkbox" name="service" value="Engine Checkup"> Engine Checkup</label>
+      <label class="service-check"><input type="checkbox" name="service" value="Battery Check"> Battery Check</label>
+      <label class="service-check"><input type="checkbox" name="service" value="Tyre Inspection"> Tyre Inspection</label>
+      <label class="service-check"><input type="checkbox" name="service" value="Pick-up & Drop"> Pickup & Drop</label>
+    </div>
+
+    <div class="form-section-title"><i class="ti ti-wash"></i> Cleaning Services</div>
+    <div class="services-grid">
+      <label class="service-check"><input type="checkbox" name="service" value="Car Wash"> Car Wash</label>
+      <label class="service-check"><input type="checkbox" name="service" value="Interior Cleaning"> Interior Cleaning</label>
+      <label class="service-check"><input type="checkbox" name="service" value="Exterior Polishing"> Exterior Polishing</label>
+      <label class="service-check"><input type="checkbox" name="service" value="Vacuum Cleaning"> Vacuum Cleaning</label>
+      <label class="service-check"><input type="checkbox" name="service" value="Ceramic Coating"> Ceramic Coating</label>
+    </div>
+
+    <div class="form-section-title"><i class="ti ti-engine"></i> Engine Services</div>
+    <div class="services-grid">
+      <label class="service-check"><input type="checkbox" name="service" value="Engine Diagnostics"> Engine Diagnostics</label>
+      <label class="service-check"><input type="checkbox" name="service" value="Spark Plug Replacement"> Spark Plug</label>
+      <label class="service-check"><input type="checkbox" name="service" value="Fuel System Cleaning"> Fuel Cleaning</label>
+    </div>
+
+    <div class="form-section-title"><i class="ti ti-snowflake"></i> AC Services</div>
+    <div class="services-grid">
+      <label class="service-check"><input type="checkbox" name="service" value="AC Gas Refill"> AC Gas Refill</label>
+      <label class="service-check"><input type="checkbox" name="service" value="AC Filter Cleaning"> AC Filter</label>
+      <label class="service-check"><input type="checkbox" name="service" value="Cooling Performance Check"> Cooling Check</label>
+      <label class="service-check"><input type="checkbox" name="service" value="AC Service"> Full AC Service</label>
+    </div>
+
+    <div class="form-section-title"><i class="ti ti-brake"></i> Brakes, Tyres & Battery</div>
+    <div class="services-grid">
+      <label class="service-check"><input type="checkbox" name="service" value="Brake Inspection"> Brake Inspection</label>
+      <label class="service-check"><input type="checkbox" name="service" value="Brake Pad Replacement"> Brake Pads</label>
+      <label class="service-check"><input type="checkbox" name="service" value="Tyre Replacement"> Tyre Replacement</label>
+      <label class="service-check"><input type="checkbox" name="service" value="Battery Charging"> Battery Charging</label>
+      <label class="service-check"><input type="checkbox" name="service" value="Battery Replacement"> Battery Replacement</label>
+    </div>
+
+    <div class="form-section-title"><i class="ti ti-diamond"></i> Premium Services</div>
+    <div class="services-grid">
+      <label class="service-check"><input type="checkbox" name="service" value="Dent & Paint Work"> Dent & Paint</label>
+      <label class="service-check"><input type="checkbox" name="service" value="Car Detailing"> Car Detailing</label>
+      <label class="service-check"><input type="checkbox" name="service" value="Anti-Rust Treatment"> Anti-Rust</label>
+    </div>
+
+    <div class="input-row" style="margin-top:8px;">
+      <div class="field-group"><label>Preferred Date</label><input type="date" id="serviceDate"></div>
+      <div class="field-group"><label>Preferred Time</label><input type="time" id="serviceTime"></div>
+    </div>
+    <div class="field-group"><label>Your Problem</label><input type="text" id="problem" placeholder="Describe your issue"></div>
+    <div class="field-group"><label>Suggestions</label><input type="text" id="suggestion" placeholder="Any suggestions?"></div>
+
+    <button class="submit-btn" id="bookServiceBtn">
+      <span id="svcText">Book Service</span>
+      <i class="ti ti-arrow-right" id="svcIcon"></i>
+      <div class="loader" id="svcLoader"></div>
+    </button>
+  </div>
+</section>
+
+<!-- Test Drive -->
+<section id="testdrive">
+  <h2 class="section-title">Book <span>Test Drive</span></h2>
+  <div class="form-card">
+    <div class="input-row">
+      <div class="field-group"><label>Full Name</label><input type="text" id="testName" placeholder="Your name"></div>
+      <div class="field-group"><label>Phone Number</label><input type="tel" id="testPhone" placeholder="+91 00000 00000"></div>
+    </div>
+    <div class="input-row">
+      <div class="field-group"><label>Select Vehicle</label>
+        <select id="vehicle">
+          <option value="">Choose a vehicle</option>
+          <option>Tata Harrier</option>
+          <option>Mahindra XUV700</option>
+          <option>Hyundai Creta</option>
+          <option>Kia Seltos</option>
+          <option>Toyota Fortuner</option>
+          <option>TATA Sierra</option>
+        </select>
+      </div>
+      <div class="field-group"><label>Drive From</label>
+        <select id="driveFrom">
+          <option value="">Select pickup point</option>
+          <option>Test drive from your home</option>
+          <option>Test drive from nearest showroom</option>
+        </select>
+      </div>
+    </div>
+    <div class="field-group"><label>Want a different car?</label><input type="text" id="customCar" placeholder="Enter car name"></div>
+
+    <div class="car-grid">
+      <div class="car-card"><img src="img/1.jpeg" alt="Tata Harrier"><div class="car-card-info"><h3>Tata Harrier</h3><p>Mileage: 16 km/l</p></div></div>
+      <div class="car-card"><img src="img/images2.jpeg" alt="Mahindra XUV700"><div class="car-card-info"><h3>Mahindra XUV700</h3><p>Mileage: 17 km/l</p></div></div>
+      <div class="car-card"><img src="img/images3.jpeg" alt="Hyundai Creta"><div class="car-card-info"><h3>Hyundai Creta</h3><p>Mileage: 18 km/l</p></div></div>
+      <div class="car-card"><img src="img/images4.jpeg" alt="Kia Seltos"><div class="car-card-info"><h3>Kia Seltos</h3><p>Mileage: 19 km/l</p></div></div>
+      <div class="car-card"><img src="img/images7.jpeg" alt="Toyota Fortuner"><div class="car-card-info"><h3>Toyota Fortuner</h3><p>Mileage: 14 km/l</p></div></div>
+      <div class="car-card"><img src="img/images6.jpeg" alt="TATA Sierra"><div class="car-card-info"><h3>TATA Sierra</h3><p>Mileage: 21 km/l</p></div></div>
+    </div>
+
+    <div class="input-row">
+      <div class="field-group"><label>Preferred Date</label><input type="date" id="testDate"></div>
+      <div class="field-group"><label>Preferred Time</label><input type="time" id="testTime"></div>
+    </div>
+    <button class="submit-btn" id="bookTestDriveBtn">
+      <span id="tdText">Book Test Drive</span>
+      <i class="ti ti-car" id="tdIcon"></i>
+      <div class="loader" id="tdLoader"></div>
+    </button>
+  </div>
+</section>
+
+<!-- Emergency -->
+<section id="emergency">
+  <h2 class="section-title">Emergency <span>Assistance</span></h2>
+  <div class="form-card">
+    <div class="input-row">
+      <div class="field-group"><label>Vehicle Number</label><input type="text" id="emVehicleNo" placeholder="MH-31 AB 1234"></div>
+      <div class="field-group"><label>Owner Name</label><input type="text" id="emOwnerName" placeholder="Your name"></div>
+    </div>
+    <div class="input-row">
+      <div class="field-group"><label>Phone Number</label><input type="tel" id="emPhoneNo" placeholder="+91 00000 00000"></div>
+      <div class="field-group"><label>Current Location</label><input type="text" id="emLocation" placeholder="Your location"></div>
+    </div>
+    <div class="field-group"><label>Problem Type</label>
+      <select id="emProblem">
+        <option value="">Select problem</option>
+        <option>Flat Tyre</option>
+        <option>Battery Dead</option>
+        <option>Engine Breakdown</option>
+        <option>Fuel Delivery</option>
+        <option>Towing Service</option>
+        <option>Accident Support</option>
+      </select>
+    </div>
+    <div class="em-note"><i class="ti ti-info-circle"></i> Note: ₹25 per km charges apply for emergency assistance</div>
+    <button class="submit-btn em-btn" id="emergencyBtn">
+      <span id="emText">Request Emergency Help</span>
+      <i class="ti ti-urgent" id="emIcon"></i>
+      <div class="loader" id="emLoader"></div>
+    </button>
+  </div>
+</section>
+
+<!-- Status -->
+<section id="status">
+  <h2 class="section-title">Service <span>Status</span></h2>
+  <div class="status-grid">
+    <div class="status-step status-done"><i class="ti ti-circle-check"></i> Service Selected</div>
+    <div class="status-step status-done"><i class="ti ti-circle-check"></i> Date & Time Confirmed</div>
+    <div class="status-step status-done"><i class="ti ti-circle-check"></i> Booking Confirmed</div>
+    <div class="status-step status-progress"><i class="ti ti-loader"></i> Service In Progress</div>
+    <div class="status-step status-pending"><i class="ti ti-clock"></i> Completed</div>
+  </div>
+</section>
+
+<!-- Feedback -->
+<section id="feedback">
+  <h2 class="section-title">Customer <span>Feedback</span></h2>
+  <div class="form-card">
+    <div class="field-group"><label>Your Name</label><input type="text" id="feedbackName" placeholder="Full name"></div>
+    <div class="field-group"><label>Rating</label>
+      <select id="feedbackRating">
+        <option value="">Select rating</option>
+        <option>⭐⭐⭐⭐⭐ Excellent</option>
+        <option>⭐⭐⭐⭐ Very Good</option>
+        <option>⭐⭐⭐ Good</option>
+        <option>⭐⭐ Average</option>
+        <option>⭐ Poor</option>
+      </select>
+    </div>
+    <div class="field-group"><label>Your Feedback</label>
+      <textarea id="feedbackMessage" rows="5" placeholder="Write your experience here..."></textarea>
+    </div>
+    <button class="submit-btn fb-btn" id="feedbackBtn">
+      <span id="fbText">Submit Feedback</span>
+      <i class="ti ti-heart" id="fbIcon"></i>
+      <div class="loader" id="fbLoader"></div>
+    </button>
+  </div>
+</section>
+  
+<!-- About -->
+<section id="about">
+  <h2 class="section-title">About <span>Us</span></h2>
+  <div class="about-text">
+    <p>Welcome to <strong>CarCare Pro</strong>, your trusted partner for complete automotive care and maintenance solutions. We are dedicated to providing high-quality vehicle services that ensure safety, reliability, and performance for every journey.</p>
+    <p>Our services include routine maintenance, oil changes, brake inspections, engine diagnostics, AC servicing, wheel alignment, battery checks, vehicle inspections, roadside assistance, emergency support, and professional test drive bookings.</p>
+    <p>At CarCare Pro, we combine experienced technicians, modern equipment, and customer-focused service to deliver a seamless automotive experience.</p>
+    <p>Customer satisfaction, transparency, quality workmanship, and timely service are the core values that drive our commitment to excellence.</p>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+  <h2 class="section-title">Contact <span>Us</span></h2>
+  <div class="contact-grid">
+    <div class="contact-item"><i class="ti ti-phone"></i><div><span>Phone</span><strong>+91 9876543210</strong></div></div>
+    <div class="contact-item"><i class="ti ti-mail"></i><div><span>Email</span><strong>support@carcare.com</strong></div></div>
+    <div class="contact-item"><i class="ti ti-clock"></i><div><span>Working Hours</span><strong>Mon–Sun: 9 AM to 8 PM</strong></div></div>
+    <div class="contact-item"><i class="ti ti-map-pin"></i><div><span>Location</span><strong>Gondia, Nagpur, Maharashtra</strong></div></div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-logo">Car<span>Care</span> Pro</div>
+  <p>Your Trusted Automotive Partner</p>
+  <div class="footer-links">
+    <a href="#service">Service Booking</a>
+    <a href="#testdrive">Test Drive</a>
+    <a href="#emergency">Emergency</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact Us</a>
+  </div>
+  <p>© 2026 CarCare Pro. All Rights Reserved.</p>
+</footer>
+
+<!-- JS -->
+<script>
+const userName = localStorage.getItem("name");
+if (userName) {
+  document.getElementById("welcome-badge").textContent = "👋 " + userName;
+  document.getElementById("welcome-hero").textContent  = "Welcome back, " + userName + " 👋";
+}
+
+function toggleFaq(el) {
+  el.classList.toggle("open");
+}
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add("animate"); observer.unobserve(e.target); }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll(".stat-card,.feature-card,.review-card,.car-card,.contact-item").forEach(el => observer.observe(el));
+
+function setLoading(textId, iconId, loaderId, btnId, loading) {
+  document.getElementById(textId).style.display = loading ? "none" : "inline";
+  document.getElementById(iconId).style.display = loading ? "none" : "inline";
+  document.getElementById(loaderId).style.display = loading ? "block" : "none";
+  document.getElementById(btnId).disabled = loading;
+}
+</script>
+
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
+import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey:            "AIzaSyC2zqF5at3r8eKG0Q7frxnS-byD1OW-vto",
+  authDomain:        "carcarepro-daf80.firebaseapp.com",
+  projectId:         "carcarepro-daf80",
+  storageBucket:     "carcarepro-daf80.firebasestorage.app",
+  messagingSenderId: "1014143359387",
+  appId:             "1:1014143359387:web:d3ab7e58dcc73af4b8a93e"
+};
+const app = initializeApp(firebaseConfig);
+const db  = getFirestore(app);
+
+// Service Booking
+document.getElementById("bookServiceBtn").addEventListener("click", async () => {
+  const vehicleNo   = document.getElementById("vehicleNo").value;
+  const ownerName   = document.getElementById("ownerName").value;
+  const phoneNo     = document.getElementById("phoneNo").value;
+  const serviceDate = document.getElementById("serviceDate").value;
+  const serviceTime = document.getElementById("serviceTime").value;
+  const suggestion  = document.getElementById("suggestion").value;
+  const problem     = document.getElementById("problem").value;
+  const selectedServices = [...document.querySelectorAll('input[name="service"]:checked')].map(i => i.value);
+  if (!vehicleNo || !ownerName || !phoneNo || !serviceDate || !serviceTime) { alert("Please fill all required fields"); return; }
+  setLoading("svcText","svcIcon","svcLoader","bookServiceBtn", true);
+  try {
+    await addDoc(collection(db,"serviceBookings"),{
+    vehicleNo,
+    ownerName,
+    phoneNo,
+    suggestion,
+    problem,
+    serviceDate,
+    serviceTime,
+    services: selectedServices,
+
+    status: "Pending",
+
+    createdAt: new Date()
+});
+    alert("Service Booking Confirmed ✅");
+    ["vehicleNo","ownerName","phoneNo","serviceDate","serviceTime","suggestion","problem"].forEach(id => document.getElementById(id).value="");
+    document.querySelectorAll('input[name="service"]').forEach(i => i.checked=false);
+  } catch(e) { alert("Error: "+e.message); }
+  setLoading("svcText","svcIcon","svcLoader","bookServiceBtn", false);
+});
+
+// Test Drive
+document.getElementById("bookTestDriveBtn").addEventListener("click", async () => {
+  const testName  = document.getElementById("testName").value;
+  const testPhone = document.getElementById("testPhone").value;
+  const vehicle   = document.getElementById("vehicle").value;
+  const driveFrom = document.getElementById("driveFrom").value;
+  const customCar = document.getElementById("customCar").value;
+  const testDate  = document.getElementById("testDate").value;
+  const testTime  = document.getElementById("testTime").value;
+  if (!testName || !testPhone || !testDate || !testTime) { alert("Please fill all required fields"); return; }
+  setLoading("tdText","tdIcon","tdLoader","bookTestDriveBtn", true);
+  try {
+    await addDoc(collection(db,"testDriveBookings"),{testName,testPhone,vehicle,driveFrom,customCar,testDate,testTime,createdAt:new Date()});
+    alert("Test Drive Booked Successfully 🚗");
+    ["testName","testPhone","customCar","testDate","testTime"].forEach(id => document.getElementById(id).value="");
+  } catch(e) { alert("Error: "+e.message); }
+  setLoading("tdText","tdIcon","tdLoader","bookTestDriveBtn", false);
+});
+
+// Emergency
+document.getElementById("emergencyBtn").addEventListener("click", async () => {
+  const vehicleNo = document.getElementById("emVehicleNo").value;
+  const ownerName = document.getElementById("emOwnerName").value;
+  const phoneNo   = document.getElementById("emPhoneNo").value;
+  const location  = document.getElementById("emLocation").value;
+  const problem   = document.getElementById("emProblem").value;
+  if (!vehicleNo || !ownerName || !phoneNo || !location || !problem) { alert("Please fill all required fields"); return; }
+  setLoading("emText","emIcon","emLoader","emergencyBtn", true);
+  try {
+    await addDoc(collection(db,"emergencyRequests"),{vehicleNo,ownerName,phoneNo,location,problem,createdAt:new Date()});
+    alert("Emergency Request Sent! Help is on the way 🚨");
+    ["emVehicleNo","emOwnerName","emPhoneNo","emLocation"].forEach(id => document.getElementById(id).value="");
+    document.getElementById("emProblem").selectedIndex=0;
+  } catch(e) { alert("Error: "+e.message); }
+  setLoading("emText","emIcon","emLoader","emergencyBtn", false);
+});
+
+// Feedback
+document.getElementById("feedbackBtn").addEventListener("click", async () => {
+  const name    = document.getElementById("feedbackName").value;
+  const rating  = document.getElementById("feedbackRating").value;
+  const message = document.getElementById("feedbackMessage").value;
+  if (!name || !rating || !message) { alert("Please fill all fields"); return; }
+  setLoading("fbText","fbIcon","fbLoader","feedbackBtn", true);
+  try {
+    await addDoc(collection(db,"customerFeedback"),{name,rating,message,createdAt:new Date()});
+    alert("Thank you for your feedback ❤️");
+    document.getElementById("feedbackName").value="";
+    document.getElementById("feedbackRating").selectedIndex=0;
+    document.getElementById("feedbackMessage").value="";
+  } catch(e) { alert("Error: "+e.message); }
+  setLoading("fbText","fbIcon","fbLoader","feedbackBtn", false);
+});
+</script>
+
+</body>
+</html>
