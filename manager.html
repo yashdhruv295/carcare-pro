@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CarCare Pro Manager</title>
+
+<link rel="stylesheet" href="manager.css">
+
+<link
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- Sidebar -->
+
+<div class="sidebar">
+
+<div class="logo">
+
+<i class="fa-solid fa-car"></i>
+
+<h2>CarCare Pro</h2>
+
+</div>
+
+<ul>
+
+<li class="active">
+<i class="fa-solid fa-house"></i>
+Dashboard
+</li>
+
+<li><a href="#Customers">
+    <i class="fa-solid fa-users"></i>
+Customers</a>
+</li>
+
+<li><a href="#Service">
+<i class="fa-solid fa-screwdriver-wrench"></i>
+Service</a>
+</li>
+
+<li><a href="#Test Drive">
+<i class="fa-solid fa-car-side"></i>
+Test Drive</a>
+</li>
+
+<li><a href="#Emergency">
+<i class="fa-solid fa-triangle-exclamation"></i>
+Emergency</a>
+</li>
+
+<li><a href="#Feedback">
+<i class="fa-solid fa-star"></i>
+Feedback</a>
+</li>
+
+<li>
+<a href="#Price">
+<i class="fa-solid fa-indian-rupee-sign"></i>
+Service Price</a>
+</li>
+
+<li onclick="location.href='manager-login.html'">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+Logout
+
+</li>
+
+</ul>
+
+</div>
+
+<!-- Main -->
+
+<div class="main">
+
+<!-- Top -->
+
+<div class="topbar">
+
+<h1>
+
+Manager Dashboard
+
+</h1>
+
+<input
+type="text"
+id="search"
+placeholder="Search...">
+
+<button onclick="location.reload()">
+
+Refresh
+
+</button>
+
+</div>
+
+<!-- Cards -->
+
+<div class="cards">
+
+<div class="card blue">
+
+<section id="Customers">
+
+<h2 id="customerCount">
+
+0
+
+</h2>
+
+<p>
+
+Customers
+
+</p>
+
+</div>
+
+<div class="card green">
+
+<h2 id="serviceCount">
+
+0
+
+</h2>
+
+<p>
+
+Service Booking
+
+</p>
+
+</div>
+
+<div class="card orange">
+
+<h2 id="testCount">
+
+0
+
+</h2>
+
+</section>
+
+<p>
+
+Test Drive
+
+</p>
+
+</div>
+
+<div class="card red">
+
+<h2 id="emergencyCount">
+
+0
+
+</h2>
+
+<p>
+
+Emergency
+
+</p>
+
+</div>
+
+<div class="card purple">
+
+<h2 id="feedbackCount">
+
+0
+
+</h2>
+
+<p>
+
+Feedback
+
+</p>
+
+</div>
+
+<div class="card yellow">
+    <h2 id="revenueCount">₹0</h2>
+    <p>Total Revenue</p>
+</div>
+
+<div class="card cyan">
+    <h2 id="todayBookingCount">0</h2>
+    <p>Today's Bookings</p>
+</div>
+
+<div class="card dark">
+    <h2 id="pendingCount">0 / 0</h2>
+    <p>Pending / Completed</p>
+</div>
+
+</div>
+
+<!-- Customers -->
+
+<div class="table-box">
+
+<h2>
+
+Customers
+
+</h2>
+
+<table id="customersTable">
+
+<tr>
+
+<th>Name</th>
+
+<th>Phone</th>
+
+<th>Date</th>
+
+</tr>
+
+</table>
+
+</div>
+
+<!-- Service -->
+<section id="Service">
+<div class="table-box">
+
+<h2>
+
+Service Booking
+
+</h2>
+
+<table id="serviceTable">
+
+<tr>
+    <th>Vehicle</th>
+    
+    <th>Owner</th>
+
+    <th>Phone</th>
+
+    <th>Date</th>
+
+    <th>Time</th>
+    
+    <th>Services</th>
+
+    <th>Total Cost</th> 
+
+    <th>Action</th>
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+<!-- Test Drive -->
+
+<section id="Test Drive">
+
+<div class="table-box">
+
+<h2>
+
+Test Drive
+
+</h2>
+
+<table id="testTable">
+
+<tr>
+
+<th>Name</th>
+
+<th>Phone</th>
+
+<th>Vehicle</th>
+
+<th>Date</th>
+
+<th>Time</th>
+
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+<!-- Emergency -->
+
+<section id="Emergency">
+
+<div class="table-box">
+
+<h2>
+
+Emergency
+
+</h2>
+
+<table id="emergencyTable">
+
+<tr>
+
+<th>Vehicle</th>
+
+<th>Owner</th>
+
+<th>Phone</th>
+
+<th>Location</th>
+
+<th>Problem</th>
+
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+<!-- Feedback -->
+
+<section id="Feedback">
+
+<div class="table-box">
+
+<h2>
+
+Customer Feedback
+
+</h2>
+
+<table id="feedbackTable">
+
+<tr>
+
+<th>Name</th>
+
+<th>Rating</th>
+
+<th>Feedback</th>
+
+</tr>
+
+</table>
+
+</div>
+
+</section>
+
+<!-- priceTable -->
+<section id="Price">
+
+<div class="table-box">
+
+<h2>Service Price Management</h2>
+
+<div id="priceTable" class="price-grid"></div>
+
+</div>
+
+</section>
+</div>
+
+
+
+
+<script type="module" src="manager.js"></script>
+
+</body>
+
+</html>

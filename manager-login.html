@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CarCare Pro | Manager Login</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+/* =========================
+   BODY
+========================= */
+
+body{
+
+min-height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+overflow:hidden;
+
+background:
+
+linear-gradient(
+135deg,
+#020617,
+#0f172a,
+#1e3a8a,
+#312e81
+);
+
+background-size:400% 400%;
+
+animation:bgAnimation 12s ease infinite;
+
+}
+
+/* Background Animation */
+
+@keyframes bgAnimation{
+
+0%{
+background-position:0% 50%;
+}
+
+50%{
+background-position:100% 50%;
+}
+
+100%{
+background-position:0% 50%;
+}
+
+}
+
+/* =========================
+   GLOWING ORBS
+========================= */
+
+.orb{
+
+position:absolute;
+
+border-radius:50%;
+
+filter:blur(2px);
+
+opacity:.6;
+
+animation:float 8s ease-in-out infinite;
+
+}
+
+.orb1{
+
+width:220px;
+
+height:220px;
+
+background:#2563eb;
+
+top:8%;
+
+left:10%;
+
+box-shadow:0 0 80px #2563eb;
+
+}
+
+.orb2{
+
+width:180px;
+
+height:180px;
+
+background:#9333ea;
+
+right:10%;
+
+bottom:12%;
+
+box-shadow:0 0 80px #9333ea;
+
+animation-delay:2s;
+
+}
+
+.orb3{
+
+width:120px;
+
+height:120px;
+
+background:#06b6d4;
+
+right:25%;
+
+top:10%;
+
+box-shadow:0 0 60px #06b6d4;
+
+animation-delay:4s;
+
+}
+
+@keyframes float{
+
+0%,100%{
+
+transform:translateY(0) scale(1);
+
+}
+
+50%{
+
+transform:translateY(-30px) scale(1.1);
+
+}
+
+}
+
+/* =========================
+   LOGIN CARD
+========================= */
+
+.login{
+
+position:relative;
+
+z-index:2;
+
+width:400px;
+
+padding:40px 35px;
+
+border-radius:25px;
+
+background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(20px);
+
+-webkit-backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,.25);
+
+box-shadow:
+
+0 25px 60px rgba(0,0,0,.5),
+
+inset 0 0 30px rgba(255,255,255,.05);
+
+animation:cardAppear 1s ease;
+
+}
+
+/* Card Entry Animation */
+
+@keyframes cardAppear{
+
+from{
+
+opacity:0;
+
+transform:translateY(60px) scale(.85);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0) scale(1);
+
+}
+
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logo{
+
+text-align:center;
+
+margin-bottom:25px;
+
+}
+
+.logo-icon{
+
+width:75px;
+
+height:75px;
+
+margin:auto;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+border-radius:50%;
+
+background:linear-gradient(
+135deg,
+#2563eb,
+#06b6d4
+);
+
+color:white;
+
+font-size:35px;
+
+box-shadow:
+
+0 0 25px rgba(37,99,235,.8),
+
+0 0 60px rgba(6,182,212,.4);
+
+animation:carFloat 3s ease-in-out infinite;
+
+}
+
+@keyframes carFloat{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-8px);
+
+}
+
+}
+
+.logo h1{
+
+color:white;
+
+font-size:28px;
+
+margin-top:15px;
+
+letter-spacing:1px;
+
+}
+
+.logo h1 span{
+
+color:#38bdf8;
+
+}
+
+.logo p{
+
+color:#cbd5e1;
+
+font-size:14px;
+
+margin-top:6px;
+
+}
+
+/* =========================
+   FORM
+========================= */
+
+.field{
+
+position:relative;
+
+margin-top:20px;
+
+}
+
+.field i{
+
+position:absolute;
+
+left:15px;
+
+top:50%;
+
+transform:translateY(-50%);
+
+color:#64748b;
+
+font-size:18px;
+
+transition:.3s;
+
+}
+
+input{
+
+width:100%;
+
+padding:15px 45px;
+
+border:none;
+
+outline:none;
+
+border-radius:12px;
+
+background:rgba(255,255,255,.92);
+
+font-size:15px;
+
+transition:.3s;
+
+}
+
+input:focus{
+
+transform:scale(1.02);
+
+box-shadow:
+
+0 0 0 3px rgba(56,189,248,.4),
+
+0 0 25px rgba(56,189,248,.3);
+
+}
+
+.field:focus-within i{
+
+color:#2563eb;
+
+}
+
+/* Password Eye */
+
+.eye{
+
+position:absolute;
+
+right:15px;
+
+left:auto !important;
+
+cursor:pointer;
+
+color:#64748b;
+
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+button{
+
+width:100%;
+
+margin-top:25px;
+
+padding:15px;
+
+border:none;
+
+border-radius:12px;
+
+background:
+
+linear-gradient(
+135deg,
+#2563eb,
+#06b6d4
+);
+
+color:white;
+
+font-size:16px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+position:relative;
+
+overflow:hidden;
+
+transition:.3s;
+
+}
+
+button:hover{
+
+transform:translateY(-3px);
+
+box-shadow:
+
+0 10px 30px rgba(37,99,235,.6);
+
+}
+
+button:active{
+
+transform:scale(.97);
+
+}
+
+/* Button Shine */
+
+button::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:-100%;
+
+width:100%;
+
+height:100%;
+
+background:linear-gradient(
+
+90deg,
+
+transparent,
+
+rgba(255,255,255,.4),
+
+transparent
+
+);
+
+transition:.5s;
+
+}
+
+button:hover::before{
+
+left:100%;
+
+}
+
+/* =========================
+   LOADER
+========================= */
+
+.loader{
+
+display:none;
+
+width:20px;
+
+height:20px;
+
+margin:auto;
+
+border:3px solid rgba(255,255,255,.4);
+
+border-top:3px solid white;
+
+border-radius:50%;
+
+animation:spin .8s linear infinite;
+
+}
+
+@keyframes spin{
+
+to{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+
+text-align:center;
+
+color:#cbd5e1;
+
+font-size:13px;
+
+margin-top:25px;
+
+}
+
+.footer i{
+
+color:#38bdf8;
+
+margin-right:5px;
+
+}
+
+/* =========================
+   ERROR SHAKE
+========================= */
+
+.shake{
+
+animation:shake .4s ease;
+
+}
+
+@keyframes shake{
+
+0%,100%{
+
+transform:translateX(0);
+
+}
+
+25%{
+
+transform:translateX(-10px);
+
+}
+
+75%{
+
+transform:translateX(10px);
+
+}
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:500px){
+
+.login{
+
+width:90%;
+
+padding:30px 22px;
+
+}
+
+.logo h1{
+
+font-size:24px;
+
+}
+
+.orb1{
+
+width:140px;
+
+height:140px;
+
+}
+
+.orb2{
+
+width:120px;
+
+height:120px;
+
+}
+
+.orb3{
+
+width:80px;
+
+height:80px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- Background Orbs -->
+
+<div class="orb orb1"></div>
+
+<div class="orb orb2"></div>
+
+<div class="orb orb3"></div>
+
+
+<!-- Login Card -->
+
+<div class="login" id="loginBox">
+
+<div class="logo">
+
+<div class="logo-icon">
+
+<i class="fa-solid fa-car"></i>
+
+</div>
+
+<h1>Car<span>Care</span> Pro</h1>
+
+<p>Manager Control Panel</p>
+
+</div>
+
+
+<form onsubmit="login(event)">
+
+<div class="field">
+
+<i class="fa-solid fa-user"></i>
+
+<input
+id="username"
+type="text"
+placeholder="Enter username"
+required>
+
+</div>
+
+
+<div class="field">
+
+<i class="fa-solid fa-lock"></i>
+
+<input
+id="password"
+type="password"
+placeholder="Enter password"
+required>
+
+<i
+class="fa-solid fa-eye eye"
+id="eye"
+onclick="togglePassword()">
+
+</i>
+
+</div>
+
+
+<button type="submit" id="loginBtn">
+
+<span id="btnText">
+
+<i class="fa-solid fa-right-to-bracket"></i>
+
+&nbsp; Login to Dashboard
+
+</span>
+
+<div class="loader" id="loader"></div>
+
+</button>
+
+</form>
+
+
+<div class="footer">
+
+<i class="fa-solid fa-shield-halved"></i>
+
+Secure Manager Access
+
+</div>
+
+</div>
+
+
+<script>
+
+/* =========================
+   LOGIN
+========================= */
+
+function login(event){
+
+event.preventDefault();
+
+const user=document.getElementById("username").value;
+
+const pass=document.getElementById("password").value;
+
+const box=document.getElementById("loginBox");
+
+const btnText=document.getElementById("btnText");
+
+const loader=document.getElementById("loader");
+
+const btn=document.getElementById("loginBtn");
+
+
+if(user==="admin" && pass==="12345"){
+
+btnText.style.display="none";
+
+loader.style.display="block";
+
+btn.disabled=true;
+
+
+setTimeout(()=>{
+
+window.location.href="manager.html";
+
+},1000);
+
+}
+
+else{
+
+box.classList.remove("shake");
+
+void box.offsetWidth;
+
+box.classList.add("shake");
+
+alert("Invalid Username or Password ❌");
+
+}
+
+}
+
+
+/* =========================
+   SHOW PASSWORD
+========================= */
+
+function togglePassword(){
+
+const password=document.getElementById("password");
+
+const eye=document.getElementById("eye");
+
+
+if(password.type==="password"){
+
+password.type="text";
+
+eye.classList.remove("fa-eye");
+
+eye.classList.add("fa-eye-slash");
+
+}
+
+else{
+
+password.type="password";
+
+eye.classList.remove("fa-eye-slash");
+
+eye.classList.add("fa-eye");
+
+}
+
+}
+
+</script>
+
+</body>
+
+</html>
